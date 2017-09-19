@@ -76,7 +76,7 @@ public class MLBParkResource {
 		boxQuery.put("$box", boxList);
 
 		spatialQuery.put("coordinates", new BasicDBObject("$within", boxQuery));
-		System.out.println("Using spatial query: " + spatialQuery.toString());
+		System.out.println("Using MY spatial query: " + spatialQuery.toString());
 
 		MongoCursor<Document> cursor = mlbParks.find(spatialQuery).iterator();
 		try {
